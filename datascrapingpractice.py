@@ -22,3 +22,5 @@ type(data_rows) #This gives us a list of table rows, but how and why? Is data_ro
 player_data = [[td.getText() for td in data_rows[i].findAll('td')] for i in range(len(data_rows))]
 
 #The outer for loop extracts the rows and the inner for loop extracts the text from each row
+
+data_row[i].findAll('td')
