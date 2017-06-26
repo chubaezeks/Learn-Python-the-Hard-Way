@@ -46,3 +46,9 @@ print ''.join(stuff) #what? cool!
 #This asks us to join everything in the list using the # in the middle
 #However, it only takes from 3-6 and not 7
 print '#'.join(stuff[3:7]) #super stellar
+
+
+#Practicing len() to see how it works
+str = "I love to get on...I love to get too on!"
+
+print "String length:", len(str)
