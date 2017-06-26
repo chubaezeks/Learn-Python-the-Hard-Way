@@ -19,6 +19,7 @@ cities['NY'] = 'New York'
 cities['OR'] = 'Portland'
 
 #print out some cities
+#Just realising you can repeat text by using * n
 print '-' * 10
 print "NY State has: ", cities['NY']
 print "OR State has: ", cities['OR']
