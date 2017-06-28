@@ -1,6 +1,6 @@
 class Ph:
     def __init__(self):
-        self.y = pass
+        self.y
         self.printHam
     def printHam(self):
         print 'ham'
