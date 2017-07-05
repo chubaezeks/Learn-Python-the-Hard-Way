@@ -50,15 +50,15 @@ def convert(snippet, phrase):
         for word in class_names:
             result = result.replace("%%%", word, 1)
 
-        #fake parameter lists
-        for word in param_names:
-            result = result.replace("***",word,1)
+        #fake other names
+        for word in other_names:
+            result = result.replace("***", word,1)
 
         #fake parameter lists
         for word in param_names:
             result = result.replace("@@@", word, 1)
 
-        result.append(result)
+        results.append(result)
 
     return results
 
@@ -76,8 +76,8 @@ def convert(snippet, phrase):
 
                     print question
 
-                    raw_input(">")
-                    print "ANSWER: %S\n\n" % answer
+                    raw_input("> ")
+                    print "ANSWER: %s\n\n" % answer
 
     except EOFError:
         print "\nBye"
