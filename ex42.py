@@ -57,20 +57,20 @@ satan = Cat("Satan")
 ## mary is-a person
 mary = Person("Mary")
 
-## mary has-a pet that is-a satan
+## pet attribute of mary is-a satan
 mary.pet = satan
 
-## frank is-a employee
+## frank is-a employee instnce
 frank = Employee("Frank", 120000)
 
-## frant has-a pet that is a rover
+## pet attribute of frank is-a rover
 frank.pet = rover
 
-##flipper is-a fish
+##flipper is-a fish instance
 flipper = Fish()
 
-## crouse is-a salmon
+## crouse is-a salmon instance
 crouse = Salmon()
 
-## harry is-a Halibut
+## harry is-a Halibut instance
 harry = Halibut()
