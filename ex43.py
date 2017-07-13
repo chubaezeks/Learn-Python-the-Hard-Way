@@ -199,13 +199,14 @@ class Map(object):
     }
 
     def __init__(self, start_scene):
-        self
+        self.start_scene = start_scene
 
     def next_scene(self, scene_name):
-        pass
+        val = Map.scenes.get(scene_name)
+        return val
 
     def opening_scene(self):
-        pass
+        return self.next_scene(self.start_scene)
 
 a_map = Map('central_corridor')
 a_game = Engine(a_map)
