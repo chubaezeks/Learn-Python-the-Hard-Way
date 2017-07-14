@@ -1,23 +1,29 @@
+
+#Commands to import modules
 from sys import exit
 from random import randint
 
-
+#Create scene class has a enter function that takes self parameter
 class Scene(object):
 
     def enter(self):
         print "This scene is not yet configured. Subclass it and implement "
         exit(1)
 
-
+#Class Engine class has an __init__ that takes self and scene_map parameters
 class Engine(object):
 
     def __init__(self, scene_map):
+#Get self from scene_map and set it to scene_map
         self.scene_map = scene_map
 
     def play (self):
+#Get self attribute from the an instance of class opening_scene
         current_scene = self.scene_map.opening_scene()
         last_scene = self.scene_map.next_scene('finished')
 
+#Create while loop indicating that when current_scene isn't equal to last_scene
+#set nsn to an attribute of the instance of class enter()
         while current_scene != last_scene:
             next_scene_name = current_scene.enter()
             current_scene = self.scene_map.next_map(next_scene_name)
@@ -25,9 +31,10 @@ class Engine(object):
             #be sure to print out the last scene
             current_scene.enter()
 
+#Get scene from class death
 class Death(Scene):
 
-
+#crate list for quips
     quips = [
         "You died. You kinda suck at this.",
         "Your mom would be proud...if she were smarter.",
