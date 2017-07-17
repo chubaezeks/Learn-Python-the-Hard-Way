@@ -33,6 +33,18 @@ state = State()
 country.revenue(self)
 state.revenue(self)
 
+
+#another practice example
+class Case(object):
+    def cover(self):
+        print "cover the phone with the case"
+
+class Phone(Case):
+    pass
+
+Case.cover()
+Phone.cover()
+
 #Override Explicitly
 class Parent(object):
 
@@ -49,6 +61,24 @@ son = Child()
 
 dad.override()
 son.override()
+
+#another example
+class Case(object):
+    def override(self):
+    print "The phone needs a case"
+
+class Phone(Case):
+    def override(self):
+        print "The case also needs the phone"
+
+case = Case()
+phone = Phone()
+
+
+case.override()
+phone.overrride()
+
+
 
 #alter before or alter after
 class Parent(object):
@@ -69,6 +99,20 @@ son = Child()
 
 dad.altered()
 son.altered()
+
+
+#another example of alter
+class Case(object):
+
+    def altered(self):
+        print "A phone needs a case."
+
+class Phone(Case):
+
+    def altered(self):
+        print "A case also needs a phone."
+        super(Phone,self).altered()
+        print "Now the order is reversed"
 
 
 #All three combined
