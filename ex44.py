@@ -161,7 +161,7 @@ class Other(object):
     def altered(self):
         print "OTHER altered()"
 
-Class Child(object):
+class Child(object):
 
 def __init__(self):
     self.other = Other()
@@ -178,6 +178,33 @@ def altered(self):
     print "CHILD, AFTER OTHER altered()"
 
 
+# example of composition
+class Case(object):
+
+    def override(self):
+        print "A phone needs a case"
+
+    def implicit(self):
+        print "An implicit phone needs a case"
+
+    def altered(self):
+        print "An altered phone needs a case"
+
+class Phone(object):
+
+    def __init__(self):
+        self.other = Other()
+
+    def implicit(self):
+        self.other = implicit()
+
+    def override(self):
+        print "An overriden case needs a phone"
+
+    def altered(self):
+        print "A case needs a phone"
+        self.other.altered()
+        print "We should get the inverse now"
 
 son = Child()
 
