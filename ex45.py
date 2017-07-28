@@ -33,7 +33,23 @@ class Death(Scene):
         exit(1)
 
 class WesterosRoad(Scene):
-    pass
+
+    def enter(self):
+        print "Tis the time for conquest. On the roads of Westeros your journey begins."
+        print "You are Aegon Tagarean of the Dragons and you aim to conquer all that stands in your way"
+        print "All that stands in your way are the Kingdoms in Weteros"
+        print "Now you will make your hourney to conquer these kingdoms or you will perish along with your dragons."
+
+        action = raw_input(" > ")
+
+        if action == "proceed!":
+            print "All men must die. Let's conquer!"
+            print "You gather your armies of thousands ready to battle."
+            print "You pay your sellswords and bribe them with women."
+            print "You feed your dragons with 100s of lambs and get them ready to slaughter by fire."
+
+
+
 
 class Winterfell(Scene):
     pass
