@@ -47,7 +47,18 @@ class WesterosRoad(Scene):
             print "You gather your armies of thousands ready to battle."
             print "You pay your sellswords and bribe them with women."
             print "You feed your dragons with 100s of lambs and get them ready to slaughter by fire."
+            return 'Winterfell'
 
+
+        elif action == "deline":
+            print "Craven! You gravely disappoint with your lack of a backbone"
+            print "Run down to a pub and drown your cowardice in a pool of alcohol"
+            print "At that pub, a sellsword steals your money and stabs you to death"
+            return "Death"
+
+        else:
+            print "DOES NOT COMPUTE"
+            return 'Westeros'
 
 
 
@@ -62,13 +73,13 @@ class KingsLanding(Scene):
 
 class Map(object):
     def __init__(self, start_scene):
-        pass
+        self.start_scene = start_scene
 
     def next_scene(self, scene_name):
-        pass
-
+        return Map.scenes.get(scene_name)
+        
     def opening_scene(self):
-        pass
+        return self.next_scene(self.start_scene)
 
 a_map = Map('WesterosRoad')
 a_game = Engine(a_map)
