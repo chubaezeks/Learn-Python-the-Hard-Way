@@ -39,10 +39,11 @@ class WesterosRoad(Scene):
         print "You are Aegon Tagarean of the Dragons and you aim to conquer all that stands in your way"
         print "All that stands in your way are the Kingdoms in Weteros"
         print "Now you will make your hourney to conquer these kingdoms or you will perish along with your dragons."
+        print "Which action will you take, proceed or decline?"
 
         action = raw_input(" > ")
 
-        if action == "proceed!":
+        if action == "proceed":
             print "All men must die. Let's conquer!"
             print "You gather your armies of thousands ready to battle."
             print "You pay your sellswords and bribe them with women."
@@ -50,7 +51,7 @@ class WesterosRoad(Scene):
             return 'Winterfell'
 
 
-        elif action == "deline":
+        elif action == "decline":
             print "Craven! You gravely disappoint with your lack of a backbone"
             print "Run down to a pub and drown your cowardice in a pool of alcohol"
             print "At that pub, a sellsword steals your money and stabs you to death"
@@ -63,7 +64,34 @@ class WesterosRoad(Scene):
 
 
 class Winterfell(Scene):
-    pass
+            print "Welcome to the North, thou of dragon blood."
+            print "Thou wishest to take over, but we shall guard our kingdom to the end"
+            print "This we swear on the old Gods."
+            print "We shall give you two options, turn around or meet your death."
+
+
+            def fight(self):
+                print "You ready your men for battle, but you have to ready your dragons."
+                print "They've been chained in the tower, and to release them you have to unlock the cell"
+                print "There are three keys, keys 24, 34, and 47 - and you can only choose one."
+                print "If you choose the wrong one, there will be dire consequences"
+
+            key = raw_input("> ")
+
+
+        if key = "47":
+            print "Phew. You took the right key! Unlock the dragons and make the sky burn red with fire."
+            return 'iron_islands'
+
+        elif key == "24":
+            print "Damn. That was the wrong key. Now the dragons are pissed and will proceed to burn you to a crisp."
+            return 'death'
+
+        else key !== "24", "34", "47":
+            print "You didn't take any of the keys. What the fuck is wrong with you."
+            print "The dragons are disappointed in you and will proceed to burn you to a crisp."
+            return 'death'
+            
 
 class IronIslands(Scene):
     pass
@@ -77,7 +105,7 @@ class Map(object):
 
     def next_scene(self, scene_name):
         return Map.scenes.get(scene_name)
-        
+
     def opening_scene(self):
         return self.next_scene(self.start_scene)
 
