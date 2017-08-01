@@ -64,37 +64,58 @@ class WesterosRoad(Scene):
 
 
 class Winterfell(Scene):
-            print "Welcome to the North, thou of dragon blood."
-            print "Thou wishest to take over, but we shall guard our kingdom to the end"
-            print "This we swear on the old Gods."
-            print "We shall give you two options, turn around or meet your death."
+        print "Welcome to the North, thou of dragon blood."
+        print "Thou wishest to take over, but we shall guard our kingdom to the end"
+        print "This we swear on the old Gods."
+        print "We shall give you two options, turn around or meet your death."
 
 
-            def fight(self):
-                print "You ready your men for battle, but you have to ready your dragons."
-                print "They've been chained in the tower, and to release them you have to unlock the cell"
-                print "There are three keys, keys 24, 34, and 47 - and you can only choose one."
-                print "If you choose the wrong one, there will be dire consequences"
+        def fight(self):
+            print "You ready your men for battle, but you have to ready your dragons."
+            print "They've been chained in the tower, and to release them you have to unlock the cell"
+            print "There are two keys, No 24 and 47 - and you can only choose one."
+            print "If you choose the wrong one, there will be dire consequences"
+            box = [24,47]
 
-            key = raw_input("> ")
+        key = raw_input("> ")
 
+            if key == "47" in box:
+                print "Phew. You took the right key! Unlock the dragons and make the sky burn red with fire."
+                return 'iron_islands'
 
-        if key = "47":
-            print "Phew. You took the right key! Unlock the dragons and make the sky burn red with fire."
-            return 'iron_islands'
+            elif key == "24" in box:
+                print "Damn. That was the wrong key. Now the dragons are pissed and will proceed to burn you to a crisp."
+                return 'death'
 
-        elif key == "24":
-            print "Damn. That was the wrong key. Now the dragons are pissed and will proceed to burn you to a crisp."
-            return 'death'
+            else key !== "24" in box or "47" in box:
+                print "You didn't take any of the keys. What the fuck is wrong with you."
+                print "The dragons are disappointed in you and will proceed to burn you to a crisp."
+                return 'death'
 
-        else key !== "24", "34", "47":
-            print "You didn't take any of the keys. What the fuck is wrong with you."
-            print "The dragons are disappointed in you and will proceed to burn you to a crisp."
-            return 'death'
-            
 
 class IronIslands(Scene):
-    pass
+    print "Welome to the Iron Island. All we have to offer you is salt sea, rocks and death."
+    print "What is dead may never die."
+    print "If you choose to live, leave now and we shall offer you safe passage, "
+    print "if you choose to fight, you shall perish."
+
+
+    def enter(self):
+        print "Your dragons will be instrumental in this war against wooden ships."
+        print "You can choose to command or dismiss your dragons."
+
+        action = raw_input(" > ")
+
+        if action == "command":
+            print "The dragons swoop down and burn the ships of ironborn."
+            print " Upon defeat, the king of the IronIslands bends his knee to you."
+
+        elif action == 'dismiss':
+            print "You dismiss your dragons and attempt to leave"
+            print "The ironborn have never been true to their words"
+            print "so they stab you in the back by sinking all your boats."
+            return 'death'
+
 
 class KingsLanding(Scene):
     pass
