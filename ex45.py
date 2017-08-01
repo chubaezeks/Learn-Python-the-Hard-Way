@@ -48,7 +48,7 @@ class WesterosRoad(Scene):
             print "You gather your armies of thousands ready to battle."
             print "You pay your sellswords and bribe them with women."
             print "You feed your dragons with 100s of lambs and get them ready to slaughter by fire."
-            return 'Winterfell'
+            return 'winterfell'
 
 
         elif action == "decline":
@@ -81,7 +81,7 @@ class Winterfell(Scene):
 
             if key == "47" in box:
                 print "Phew. You took the right key! Unlock the dragons and make the sky burn red with fire."
-                return 'iron_islands'
+                return 'ironislands'
 
             elif key == "24" in box:
                 print "Damn. That was the wrong key. Now the dragons are pissed and will proceed to burn you to a crisp."
@@ -109,6 +109,7 @@ class IronIslands(Scene):
         if action == "command":
             print "The dragons swoop down and burn the ships of ironborn."
             print " Upon defeat, the king of the IronIslands bends his knee to you."
+            return 'kingslanding'
 
         elif action == 'dismiss':
             print "You dismiss your dragons and attempt to leave"
@@ -118,7 +119,11 @@ class IronIslands(Scene):
 
 
 class KingsLanding(Scene):
-    pass
+     print "You gather all the swords from the kingdoms"
+     print "Then have your dragons melt and mould them into a throne made entirely of swords."
+     print "Congratulations, you have won the game of Thrones."
+     return exit
+
 
 class Map(object):
     def __init__(self, start_scene):
@@ -129,6 +134,10 @@ class Map(object):
 
     def opening_scene(self):
         return self.next_scene(self.start_scene)
+
+ironisland = IronIslands(Scene)
+kingslanding = KingsLanding(Scene)
+winterfell = Winterfell(Scene)
 
 a_map = Map('WesterosRoad')
 a_game = Engine(a_map)
