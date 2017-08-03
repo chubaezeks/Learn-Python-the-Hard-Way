@@ -77,7 +77,7 @@ class Winterfell(Scene):
             print "If you choose the wrong one, there will be dire consequences"
             box = [24,47]
 
-        key = raw_input("> ")
+        key = raw_input(" > ")
 
             if key == "47" in box:
                 print "Phew. You took the right key! Unlock the dragons and make the sky burn red with fire."
